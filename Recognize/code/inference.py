@@ -31,7 +31,10 @@ def output_fn(prediction, content_type):
     return prediction
 
 def main():
-    model_fn("pretrained/ram_plus_swin_large_14m.pth")
+    modelGet = model_fn('pretrained/ram_swin_large_14m.pth')
+    imageInput = input_fn('images/demo/demo3.jpg')
+    res = predict_fn(imageInput, modelGet)
+    output_fn(res, '')
 
 if __name__ == "__main__":
     main()
